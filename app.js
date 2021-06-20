@@ -15,9 +15,9 @@ let _project4 = gsap.timeline()
 let _contact = gsap.timeline()
 
 
-boxTl.to('.box', {duration:0.5, width:"23vw", delay: 0.1, ease: "power4.inOut"})
-  .from('.hi', {duration:0.5, y:"10vw", ease: "power3.out"})
-  .to('.box', {duration:1, height:"8.5vw", ease: "elastic.out", onComplete: () => masterTl.play() })
+boxTl.to('.box', {duration:0.5, width:"25vw", delay: 0.1, ease: "power4.inOut"})
+  .from('.hi', {duration:0.5, y:"11vw", ease: "power3.out"})
+  .to('.box', {duration:1, height:"9.5vw", ease: "elastic.out", onComplete: () => masterTl.play() })
   .to('.box', {duration:2, autoAlpha:0.7, yoyo: true, repeat: -1, ease:"rough({ template: none.out, strength:  1, points: 20, taper: 'none', randomize: true, clamp: false})"})
 
 
