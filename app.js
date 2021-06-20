@@ -1,9 +1,12 @@
   
-const words = [" Nikhil", " a Designer", " a Developer", " Nikhil"]
+const words = [" Nikhil", " a Designer", " a Developer", " Nikhil M Jeby"]
 
 let cursor = gsap.to('.cursor', {opacity:0, ease: "power2.inOut", repeat:-1})
 let masterTl = gsap.timeline()
 let boxTl = gsap.timeline()
+masterTl.pause()
+
+
 let _start = gsap.timeline()
 let _project1 = gsap.timeline()
 let _project2 = gsap.timeline()
@@ -30,5 +33,6 @@ words.forEach((word,i) => {
 
 function Page1(){
     _project1.to(".jobType",{opacity:1,  y:"-20vh"});
+    _project1.to(".icon-scroll",{opacity:1});
 }
 
