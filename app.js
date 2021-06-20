@@ -1,11 +1,11 @@
    function openFullscreen() {
-    if (document.body.requestFullscreen) {
-        document.body.requestFullscreen();
-    } else if (document.body.webkitRequestFullscreen) { /* Safari */
-        document.body.webkitRequestFullscreen();
-    } else if (document.body.msRequestFullscreen) { /* IE11 */
-        document.body.msRequestFullscreen();
-    }
+    // if (document.body.requestFullscreen) {
+    //     document.body.requestFullscreen();
+    // } else if (document.body.webkitRequestFullscreen) { /* Safari */
+    //     document.body.webkitRequestFullscreen();
+    // } else if (document.body.msRequestFullscreen) { /* IE11 */
+    //     document.body.msRequestFullscreen();
+    // }
   }
 
 
@@ -23,7 +23,21 @@ ScrollTrigger.defaults({
 })
 
 
+const screens={
+    // 0 : "#home",
+    0 : "#panel1",
+    1 : "#panel2",
+    2 : "#panel3",
+    3 : "#panel4",
+    4 : "#panel5",
+    5 : "#contact"
+}
+
 const words = [" Nikhil", " a Designer", " a Developer", " Nikhil M Jeby"]
+
+
+
+
 let cursor = gsap.to('.cursor', {opacity:0, ease: "power2.inOut", repeat:-1})
 let masterTl = gsap.timeline()
 let boxTl = gsap.timeline()
@@ -54,22 +68,21 @@ words.forEach((word,i) => {
   masterTl.add(tl)
 })
 
-const screens={
-    // 0 : "#home",
-    0 : "#panel1",
-    1 : "#panel2",
-    2 : "#panel3",
-    3 : "#panel4",
-    4 : "#panel5",
-    5 : "#contact"
-}
+
 function loadComplete(){
     $('body').css({'overflow-y':'scroll'});
     Page1();
 }
 
 function createTimeLines(screenID){
-    TimeLines[screenID] =  gsap.timeline();
+    TimeLines[screenID] =  gsap.timeline({
+        scrollTrigger :{
+            trigger:screens[screenID],
+            start:"top top",
+            scrub:2,
+            pin:true,
+            end: "+=250"
+        }});
 }
 
 function Page1(){
@@ -90,11 +103,7 @@ function BeginScreen(id){
 }
 
 function project1(id){
-    TimeLines[id].to(".rocket",{y:200, scrollTrigger :{
-        trigger:".rocket",
-        start:"top center",
-        scrub:2
-    }});
+    TimeLines[id].to(".rocket",{x:500 , duration:1});
 }
 
 function project2(){

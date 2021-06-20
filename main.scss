@@ -11,7 +11,7 @@ body::-webkit-scrollbar {
 body{
     background:rgb(14, 14, 14);
     height: 100vh;
-    scroll-snap-type: y mandatory;
+    // scroll-snap-type: y mandatory;
 }
 
 h1{
@@ -22,7 +22,7 @@ section {
     height:100vh;
     overflow: hidden;
     font-family: "Montserrat", sans-serif;
-    scroll-snap-align: start;
+    // scroll-snap-align: start;
 }
 
 
@@ -58,7 +58,7 @@ section {
 
 .animation{
 
-
+background-color: blue;
 }
 
 .rocket{
