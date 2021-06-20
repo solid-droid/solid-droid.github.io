@@ -10,22 +10,6 @@ body {
   background: #0e0e0e;
 }
 
-body:-webkit-full-screen {
-  overflow-y: scroll !important;
-}
-
-body:-moz-full-screen {
-  overflow-y: scroll !important;
-}
-
-body:-ms-fullscreen {
-  overflow-y: scroll !important;
-}
-
-body:fullscreen {
-  overflow-y: scroll !important;
-}
-
 h1 {
   font-size: 8vw;
 }
