@@ -32,7 +32,7 @@ words.forEach((word,i) => {
 })
 
 function Page1(){
-    _project1.to(".jobType",{opacity:1,  y:"-20vh"});
+    _project1.to(".jobType",{opacity:1,  y:"-30vh"});
     _project1.to(".icon-scroll",{opacity:1});
 }
 
