@@ -11,6 +11,7 @@
   }
 
   $(document).ready(function(){
+    $('body').css({overflow:"hidden"});
     $(this).scrollTop(0);
 });
 
@@ -49,6 +50,7 @@ words.forEach((word,i) => {
 
 function Page1(){
     _project1.to(".jobType",{opacity:1,  y:"-20vh"});
+    $('body').css({'overflow-y':'scroll'});
     _project1.to(".icon-scroll",{opacity:1});
 }
 
