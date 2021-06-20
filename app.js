@@ -1,21 +1,24 @@
-   let position;
-   let scrollInProgress = false;
-
    function openFullscreen() {
-    if (document.body.requestFullscreen) {
-        document.body.requestFullscreen();
-    } else if (document.body.webkitRequestFullscreen) { /* Safari */
-        document.body.webkitRequestFullscreen();
-    } else if (document.body.msRequestFullscreen) { /* IE11 */
-        document.body.msRequestFullscreen();
-    }
+
+// Scroll snap issue
+
+    // if (document.body.requestFullscreen) {
+    //     document.body.requestFullscreen();
+    // } else if (document.body.webkitRequestFullscreen) { /* Safari */
+    //     document.body.webkitRequestFullscreen();
+    // } else if (document.body.msRequestFullscreen) { /* IE11 */
+    //     document.body.msRequestFullscreen();
+    // }
   }
 
+
   $(document).ready(function(){
-    position = $(window).scrollTop(); 
-    $('body').css({overflow:"hidden"});
     $(this).scrollTop(0);
+    $('body').css({overflow:"hidden"});
 });
+
+
+
 
 gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.defaults({
@@ -67,40 +70,7 @@ const screens={
 function loadComplete(){
     Page1();
     $('body').css({'overflow-y':'scroll'});
-
-    //not Full screen
-    $(window).scroll(function() {
-        scrollEvent(window);
-    });
-
-    //Full-screen
-    $(document.body).scroll(function() {
-        scrollEvent(document.body);
-    });
-     
-}
-
-function scrollEvent(element){
-    var scroll = $(element).scrollTop();
-    if(!scrollInProgress){
-        if(scroll > position) {
-            // down
-            currentScreen = currentScreen >= 6 ? 6 : ++currentScreen;
-            console.log("down")
-            gsap.to("body", {duration: 0.5, scrollTo: screens[currentScreen], ease: "power2"});
-        } else {
-            // up
-            console.log("up")
-            currentScreen = currentScreen <= 0 ? 0 : --currentScreen
-            gsap.to("body", {duration: 0.5, scrollTo: screens[currentScreen], ease: "power2"});
-        }
-    }
-    scrollInProgress = true;
-    position = scroll;
-    clearTimeout($.data(this, 'scrollTimer'));
-    $.data(this, 'scrollTimer', setTimeout(function() {
-        scrollInProgress = false;
-    }, 250));
+    new PanelSnap();
 }
 
 function Page1(){
