@@ -13,6 +13,8 @@ body::-webkit-scrollbar {
 body {
   background: #0e0e0e;
   height: 100vh;
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
 }
 
 h1 {
@@ -23,6 +25,7 @@ section {
   height: 100vh;
   overflow: hidden;
   font-family: "Montserrat", sans-serif;
+  scroll-snap-align: start;
 }
 
 .Name {
