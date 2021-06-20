@@ -1,14 +1,11 @@
    function openFullscreen() {
-
-// Scroll snap issue
-
-    // if (document.body.requestFullscreen) {
-    //     document.body.requestFullscreen();
-    // } else if (document.body.webkitRequestFullscreen) { /* Safari */
-    //     document.body.webkitRequestFullscreen();
-    // } else if (document.body.msRequestFullscreen) { /* IE11 */
-    //     document.body.msRequestFullscreen();
-    // }
+    if (document.body.requestFullscreen) {
+        document.body.requestFullscreen();
+    } else if (document.body.webkitRequestFullscreen) { /* Safari */
+        document.body.webkitRequestFullscreen();
+    } else if (document.body.msRequestFullscreen) { /* IE11 */
+        document.body.msRequestFullscreen();
+    }
   }
 
 
@@ -70,7 +67,6 @@ const screens={
 function loadComplete(){
     Page1();
     $('body').css({'overflow-y':'scroll'});
-    new PanelSnap();
 }
 
 function Page1(){
