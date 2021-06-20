@@ -1,13 +1,13 @@
   
    const body =document.getElementsByTagName("BODY")[0]
    function openFullscreen() {
-    if (body.requestFullscreen) {
-        body.requestFullscreen();
-    } else if (body.webkitRequestFullscreen) { /* Safari */
-        body.webkitRequestFullscreen();
-    } else if (body.msRequestFullscreen) { /* IE11 */
-        body.msRequestFullscreen();
-    }
+    // if (body.requestFullscreen) {
+    //     body.requestFullscreen();
+    // } else if (body.webkitRequestFullscreen) { /* Safari */
+    //     body.webkitRequestFullscreen();
+    // } else if (body.msRequestFullscreen) { /* IE11 */
+    //     body.msRequestFullscreen();
+    // }
   }
 
   $(document).ready(function(){
@@ -15,6 +15,10 @@
     $(this).scrollTop(0);
 });
 
+gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.defaults({
+    // markers:true
+})
 
 
 const words = [" Nikhil", " a Designer", " a Developer", " Nikhil M Jeby"]
@@ -42,15 +46,54 @@ words.forEach((word,i) => {
   let tl = gsap.timeline({repeat:  i<words.length-1?1:0, yoyo: i<words.length-1?true:false, repeatDelay:1})
   tl.to('.text', {duration: 1, text: word})
   if(i==words.length-1){
-    tl.to(".Name", {duration:1, y:"-20vh", onComplete:Page1},"-=1")
+    tl.to(".Name", {duration:1, y:"-20vh", onComplete:loadComplete},"-=1")
   }
   
   masterTl.add(tl)
 })
 
+let currentScreen = 0;
+const screens={
+    0 : "#home",
+    1 : "#panel1",
+    2 : "#panel2",
+    3 : "#panel3",
+    4 : "#panel4",
+    5 : "#panel5",
+    6 : "#contact"
+}
+function loadComplete(){
+    Page1();
+    $('body').css({'overflow-y':'scroll'});
+    for(let i = 0; i<7 ;++i)
+        createScrollTriggers(i);
+     
+}
+
+function createScrollTriggers(screen){
+    ScrollTrigger.create({
+        trigger: screens[screen],
+        start: "+=50 top", 
+        end: "-=50 bottom", 
+        onEnter: () => {
+            gsap.to(body, {duration: 1, scrollTo: screens[screen>=6?6:screen+1]})
+        },
+
+      });
+
+    ScrollTrigger.create({
+        trigger: screens[screen],
+        start: "-=50 bottom", 
+        end: "+=50 top", 
+        onEnterBack:() =>{
+            gsap.to(body, {duration: 1, scrollTo: screens[screen<=0?0:screen-1]})
+        }
+
+      });
+}
+
 function Page1(){
     _project1.to(".jobType",{opacity:1,  y:"-20vh"});
-    $('body').css({'overflow-y':'scroll'});
     _project1.to(".icon-scroll",{opacity:1});
 }
 
