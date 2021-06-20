@@ -1,6 +1,20 @@
   
-const words = [" Nikhil", " a Designer", " a Developer", " Nikhil M Jeby"]
+   const body =document.getElementsByTagName("BODY")[0]
+   function openFullscreen() {
+    if (body.requestFullscreen) {
+        body.requestFullscreen();
+    } else if (body.webkitRequestFullscreen) { /* Safari */
+        body.webkitRequestFullscreen();
+    } else if (body.msRequestFullscreen) { /* IE11 */
+        body.msRequestFullscreen();
+    }
+  }
 
+
+
+
+
+const words = [" Nikhil", " a Designer", " a Developer", " Nikhil M Jeby"]
 let cursor = gsap.to('.cursor', {opacity:0, ease: "power2.inOut", repeat:-1})
 let masterTl = gsap.timeline()
 let boxTl = gsap.timeline()
@@ -32,7 +46,7 @@ words.forEach((word,i) => {
 })
 
 function Page1(){
-    _project1.to(".jobType",{opacity:1,  y:"-30vh"});
+    _project1.to(".jobType",{opacity:1,  y:"-20vh"});
     _project1.to(".icon-scroll",{opacity:1});
 }
 
