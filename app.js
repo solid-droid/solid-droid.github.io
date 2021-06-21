@@ -67,7 +67,7 @@ function openLink(page = 'watch', type = 0)
 
 gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.defaults({
-    // markers:true
+    markers:true
 })
 
 
@@ -126,9 +126,9 @@ function createTimeLines(screenID){
     TimeLines[screenID] =  gsap.timeline({
         scrollTrigger :{
             trigger:screens[screenID],
-            start:"top-=200 top",
+            start:"top-=50% top",
             scrub:1.5,
-            end: "bottom-=200"
+            end: "bottom-=70%"
         }});
         ScrollTrigger.create({
             trigger: "#id",
