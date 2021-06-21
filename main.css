@@ -65,6 +65,14 @@ section {
   font-size: 3vw;
 }
 
+.watchContent {
+  position: absolute;
+  text-align: right;
+  width: 100%;
+  padding-top: 50px;
+  padding-right: 50px;
+}
+
 .rocket {
   height: 100px;
 }
@@ -106,8 +114,8 @@ section {
 
 .watchBody {
   position: absolute;
-  top: 50px;
-  left: 250px;
+  top: 20;
+  left: 220px;
   -webkit-transform: rotate(50deg);
           transform: rotate(50deg);
 }
@@ -406,6 +414,15 @@ section {
   }
   .jobType h1 {
     font-size: 6vw;
+  }
+  .watchContent {
+    padding-top: 0;
+    padding-left: 0;
+    margin-top: -20px;
+    margin-left: -30px;
+    text-align: left;
+    -webkit-transform: rotate(-40deg);
+            transform: rotate(-40deg);
   }
 }
 /*# sourceMappingURL=main.css.map */

@@ -56,8 +56,12 @@ section {
     }
 }
 
-.animation{
-
+.watchContent{
+position: absolute;
+text-align: right;
+width: 100%;
+padding-top: 50px;
+padding-right: 50px;
 
 }
 
@@ -101,8 +105,8 @@ section {
 
 .watchBody{
     position: absolute;
-    top: 50px;
-    left: 250px;
+    top: 20;
+    left: 220px;
     transform: rotate(50deg);
     .watchFace{
       position: absolute;
@@ -369,4 +373,12 @@ section {
             font-size:  6vw;
         }
     }
+    .watchContent{
+        padding-top: 0;
+        padding-left: 0;
+        margin-top: -20px;
+        margin-left: -30px;
+        text-align: left;
+        transform: rotate(-40deg);
+    }     
 }
