@@ -116,10 +116,24 @@ words.forEach((word,i) => {
   masterTl.add(tl)
 })
 
-
-function loadComplete(){
+let autoScroll = false;
+async function loadComplete(){
     $('body').css({'overflow-y':'scroll'});
     Page1();
+    await new Promise(r=>setTimeout(r, 1000));
+    beginAutoScroll();
+    $(window).scroll(function() {
+        clearTimeout($.data(this, 'scrollTimer'));
+        $.data(this, 'scrollTimer', setTimeout(function() {
+            beginAutoScroll();
+        }, 3000));
+    });
+}
+
+function beginAutoScroll()
+{
+    autoScroll = true;   
+    gsap.to(document.body, {duration: 100, scrollTo:{y:"#contact", autoKill: true, onAutoKill:()=>{autoScroll=false}}});
 }
 
 function createTimeLines(screenID){
