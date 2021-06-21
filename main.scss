@@ -26,7 +26,7 @@ h1{
 }
 
 section {
-    height:100vh;
+    height:80vh;
     position: relative;
     overflow: hidden;
     font-family: "Montserrat", sans-serif;
@@ -68,7 +68,7 @@ section {
 position: absolute;
 text-align: right;
 width: 100%;
-top: 5%;
+top: 10%;
 padding-right: 7vw;
 
 }
@@ -76,7 +76,7 @@ padding-right: 7vw;
 .watchContent{
     position: absolute;
     text-align: right;
-    bottom: 20vh;
+    bottom: 0;
     padding-right: 7vw;
     width: 100%;
     h2{
@@ -425,16 +425,10 @@ padding-right: 7vw;
         }
     }
     .watchHeader{
-        padding-top: 0;
-        padding-left: 0;
-        margin-top: -20px;
-        margin-left: -30px;
-        text-align: left;
-        transform: rotate(-40deg);
+        top: 55vh;
     }     
     .watchContent {
         margin-top: 0;
-        bottom:180px;
         h2{
             padding-bottom: 1vh;
             font-size: 3.5vw;

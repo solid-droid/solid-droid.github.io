@@ -126,11 +126,17 @@ function createTimeLines(screenID){
     TimeLines[screenID] =  gsap.timeline({
         scrollTrigger :{
             trigger:screens[screenID],
-            start:"top top",
-            scrub:2,
-            pin:true,
-            end: "+=200"
+            start:"top-=200 top",
+            scrub:1.5,
+            end: "bottom-=200"
         }});
+        ScrollTrigger.create({
+            trigger: "#id",
+            trigger:screens[screenID],
+            start:"top top",
+            pin:true,
+            end: "bottom"
+        });
 }
 
 function Page1(){
@@ -151,7 +157,15 @@ function BeginScreen(id){
 }
 
 function project1(id){
-    // TimeLines[id].to(".rocket",{x:500 , duration:1});
+    let tl =gsap.timeline();
+    tl.to(".jobType",{opacity: 0 , duration:0.5},0);
+    tl.from(".watchStrap1",{y:-245 , duration:1},0);
+    tl.from(".watchStrap2",{y:200 , duration:1}, 0);
+    tl.from(".watchFace",{opacity:0,x:-50, duration:0.5},0);
+    tl.from(".watchDisplay",{opacity:0, duration:1.5},"+=0.5");
+    tl.from(".watchHeader",{opacity:0, y:-50, duration:1},0);
+    tl.from(".watchContent",{opacity:0, y:-50, duration:1},0);
+    TimeLines[id].add(tl);
 }
 
 function project2(){
