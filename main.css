@@ -33,6 +33,7 @@ h1 {
 
 section {
   height: 100vh;
+  position: relative;
   overflow: hidden;
   font-family: "Montserrat", sans-serif;
 }
@@ -81,15 +82,15 @@ section {
   position: absolute;
   text-align: right;
   width: 100%;
-  padding-top: 50px;
-  padding-right: 50px;
+  top: 5%;
+  padding-right: 7vw;
 }
 
 .watchContent {
   position: absolute;
   text-align: right;
-  margin-top: 200px;
-  padding-right: 20px;
+  bottom: 20vh;
+  padding-right: 7vw;
   width: 100%;
 }
 
