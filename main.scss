@@ -80,6 +80,7 @@ padding-right: 7vw;
     padding-right: 7vw;
     width: 100%;
     h2{
+         font-size:  2vw;
         padding-bottom: 20px;
     }
 }
@@ -393,7 +394,31 @@ padding-right: 7vw;
     }
   }
 
-
+  .phoneBody{
+    position: absolute;
+    top: 10;
+    right: 10;
+    width: 200px;
+    height: 370px;
+    margin: 15px;
+    border: 6px solid black;
+    border-radius: 45px;
+    background-color: #f3f3f3;
+    box-shadow: 1px 1px 6px 1px white;
+    &:after{
+      content: '';
+      position: absolute;
+      bottom: 6px;
+      left: 50%;
+      width: 100px;
+      height: 3px;
+      border-radius: 2px;
+      transform: translatex(-50%);
+      background-color: black;
+      z-index: 1000;
+      }
+  }
+   
 
 @-webkit-keyframes scroll {
   0% {
