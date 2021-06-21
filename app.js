@@ -136,7 +136,10 @@ function scale (number, inMin, inMax, outMin, outMax) {
 function beginAutoScroll()
 {
     autoScroll = true;   
-    gsap.to(document.body, {duration: scale(document.body.scrollTop, 0, 3158, 100, 0), scrollTo:{y:"max", autoKill: true, ease:'none',onAutoKill:()=>{autoScroll=false}}});
+    gsap.to(document.body, {duration: 
+        scale(document.body.scrollTop, 
+        0, 1+ Math.max( document.body.scrollHeight, document.body.offsetHeight,document.documentElement.clientHeight, document.documentElement.scrollHeight, document.documentElement.offsetHeight)
+        , 100, 0), scrollTo:{y:"max", autoKill: true, ease:'none',onAutoKill:()=>{autoScroll=false}}});
 }
 
 function createTimeLines(screenID){
