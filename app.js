@@ -52,8 +52,18 @@
     $('body').css({overflow:"hidden"});
 });
 
+const links = {
+    watch: [
+        "https://codepen.io/solid-droid/pen/oNZOJbg",
+        "https://github.com/solid-droid/BubbleOS"
+    ], 
+};
 
 
+function openLink(page = 'watch', type = 0)
+{
+    window.open(links[page][type], '_blank').focus();
+}
 
 gsap.registerPlugin(ScrollTrigger);
 ScrollTrigger.defaults({

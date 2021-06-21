@@ -13,6 +13,18 @@ body::-webkit-scrollbar {
 body {
   background: #0e0e0e;
   height: 100vh;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Old versions of Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
 }
 
 h1 {
@@ -21,7 +33,6 @@ h1 {
 
 section {
   height: 100vh;
-  overflow: hidden;
   font-family: "Montserrat", sans-serif;
 }
 
@@ -65,12 +76,52 @@ section {
   font-size: 3vw;
 }
 
-.watchContent {
+.watchHeader {
   position: absolute;
   text-align: right;
   width: 100%;
   padding-top: 50px;
   padding-right: 50px;
+}
+
+.watchContent {
+  position: absolute;
+  text-align: right;
+  margin-top: 200px;
+  padding-right: 20px;
+  width: 100%;
+}
+
+.watchContent h2 {
+  padding-bottom: 20px;
+}
+
+.WatchMore {
+  margin-top: 30px;
+}
+
+.btn {
+  border-radius: 0.6em;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-right: 10px;
+  padding: 5px;
+  border-color: #85c0ff;
+  width: 150px;
+  text-align: center;
+  color: #fff;
+  background-image: linear-gradient(45deg, #85bfff 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
+}
+
+.btn:hover, .btn:focus {
+  color: #fff;
+  outline: 0;
+  background-position: 0;
 }
 
 .rocket {
@@ -415,7 +466,7 @@ section {
   .jobType h1 {
     font-size: 6vw;
   }
-  .watchContent {
+  .watchHeader {
     padding-top: 0;
     padding-left: 0;
     margin-top: -20px;
