@@ -184,6 +184,8 @@ function project1(id){
     tl.from(".watchDisplay",{opacity:0, duration:1.5},"+=0.2");
     tl.from(".watchHeader",{opacity:0, y:-50, duration:1},0);
     tl.from(".watchContent",{opacity:0, y:-50, duration:1},0);
+    tl.to(".jobType",{opacity:0, y:-50, duration:1},0);
+    tl.to(".Name",{opacity:0, y:-50, duration:1},0);
     TimeLines[id].add(tl);
 }
 
