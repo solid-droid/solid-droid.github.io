@@ -484,7 +484,8 @@ section {
             transform: rotate(-40deg);
   }
   .watchContent {
-    margin-top: 400px;
+    margin-top: 0;
+    bottom: 150px;
   }
   .watchContent h2 {
     padding-bottom: 1vh;

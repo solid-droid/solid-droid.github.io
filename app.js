@@ -129,7 +129,7 @@ function createTimeLines(screenID){
             start:"top top",
             scrub:2,
             pin:true,
-            end: "+=250"
+            end: "+=200"
         }});
 }
 
