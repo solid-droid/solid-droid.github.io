@@ -178,7 +178,7 @@ function BeginScreen(id){
 
 function project1(id){
     let tl =gsap.timeline();
-    tl.to(".jobType",{opacity: 0 , duration:0.5},0);
+    tl.to(".jobType",{opacity: 0 , duration:1},0);
     tl.from(".watchStrap1",{y:-245 , duration:1},0);
     tl.from(".watchStrap2",{y:200 , duration:1}, 0);
     tl.from(".watchFace",{opacity:0,x:-50, duration:0.5},0);

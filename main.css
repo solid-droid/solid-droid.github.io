@@ -257,8 +257,8 @@ section {
 
 .watchDisplay .WatchBubble .bb {
   position: absolute;
-  -webkit-box-shadow: 0px 0px 2px 2px #ffffffcc, inset 0px 0px 4px 1px #ffffff;
-          box-shadow: 0px 0px 2px 2px #ffffffcc, inset 0px 0px 4px 1px #ffffff;
+  -webkit-box-shadow: 0px 0px 1px 1px #ffffffcc, inset 0px 0px 4px 1px #ffffff;
+          box-shadow: 0px 0px 1px 1px #ffffffcc, inset 0px 0px 4px 1px #ffffff;
   border-radius: 50%;
   background: #ececec;
 }
