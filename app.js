@@ -129,11 +129,14 @@ async function loadComplete(){
         }, 3000));
     });
 }
+function scale (number, inMin, inMax, outMin, outMax) {
+    return (number - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+}
 
 function beginAutoScroll()
 {
     autoScroll = true;   
-    gsap.to(document.body, {duration: 100, scrollTo:{y:"#contact", autoKill: true, onAutoKill:()=>{autoScroll=false}}});
+    gsap.to(document.body, {duration: scale(document.body.scrollTop, 0, 3158, 100, 0), scrollTo:{y:"max", autoKill: true, ease:'none',onAutoKill:()=>{autoScroll=false}}});
 }
 
 function createTimeLines(screenID){
