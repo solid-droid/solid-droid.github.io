@@ -119,17 +119,14 @@ padding-right: 7vw;
 .scrollIconContainer{
     position: fixed;
     display: flex;
+    justify-content: center;
     width: 100vw;
     height: 70px;
     bottom: 0;
     opacity: 1;
 }
 
-.icon-scroll,
-.icon-scroll:before {
-    position: absolute;
-  left: 50%;
-}
+
 .icon-scroll {
     opacity: 0;
     width: 30px;
@@ -138,12 +135,13 @@ padding-right: 7vw;
     border-radius: 25px;
 }
 .icon-scroll:before {
-  content: '';
-  width: 8px;
-  height: 8px;
-  background: #fff;
-  margin-left: -4px;
-  top: 8px;
+    content: '';
+    width: 8px;
+    position: absolute;
+    height: 8px;
+    margin-left: 10px;
+    margin-top: 5px;
+    background: #fff;
   border-radius: 4px;
   -webkit-animation-duration: 1.5s;
           animation-duration: 1.5s;

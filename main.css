@@ -135,16 +135,13 @@ section {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100vw;
   height: 70px;
   bottom: 0;
   opacity: 1;
-}
-
-.icon-scroll,
-.icon-scroll:before {
-  position: absolute;
-  left: 50%;
 }
 
 .icon-scroll {
@@ -159,10 +156,11 @@ section {
 .icon-scroll:before {
   content: '';
   width: 8px;
+  position: absolute;
   height: 8px;
+  margin-left: 10px;
+  margin-top: 5px;
   background: #fff;
-  margin-left: -4px;
-  top: 8px;
   border-radius: 4px;
   -webkit-animation-duration: 1.5s;
   animation-duration: 1.5s;
