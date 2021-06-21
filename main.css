@@ -105,7 +105,7 @@ section {
   background-color: transparent;
   cursor: pointer;
   font-size: 1rem;
-  margin-right: 10px;
+  margin-left: 10px;
   padding: 5px;
   border-color: #85c0ff;
   width: 150px;
@@ -128,6 +128,17 @@ section {
   height: 100px;
 }
 
+.scrollIconContainer {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100vw;
+  height: 70px;
+  bottom: 0;
+  opacity: 1;
+}
+
 .icon-scroll,
 .icon-scroll:before {
   position: absolute;
@@ -135,13 +146,9 @@ section {
 }
 
 .icon-scroll {
-  position: fixed;
   opacity: 0;
   width: 30px;
   height: 50px;
-  margin-left: -20px;
-  top: 95vh;
-  margin-top: -35px;
   -webkit-box-shadow: inset 0 0 0 1px #fff;
           box-shadow: inset 0 0 0 1px #fff;
   border-radius: 25px;
@@ -474,6 +481,19 @@ section {
     text-align: left;
     -webkit-transform: rotate(-40deg);
             transform: rotate(-40deg);
+  }
+  .watchContent {
+    margin-top: 400px;
+  }
+  .watchContent h2 {
+    padding-bottom: 1vh;
+    font-size: 3.5vw;
+  }
+  .watchContent h3 {
+    padding-top: 10px;
+  }
+  .WatchMore {
+    margin-top: 10px;
   }
 }
 /*# sourceMappingURL=main.css.map */

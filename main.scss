@@ -92,7 +92,7 @@ padding-right: 50px;
     background-color: transparent;
     cursor: pointer;
     font-size: 1rem;
-    margin-right: 10px;
+    margin-left: 10px;
     padding: 5px;
     // font-family: 'Montserrat', sans-serif;
     border-color: #85c0ff;
@@ -115,6 +115,14 @@ padding-right: 50px;
     height: 100px;
 }
 
+.scrollIconContainer{
+    position: fixed;
+    display: flex;
+    width: 100vw;
+    height: 70px;
+    bottom: 0;
+    opacity: 1;
+}
 
 .icon-scroll,
 .icon-scroll:before {
@@ -122,15 +130,11 @@ padding-right: 50px;
   left: 50%;
 }
 .icon-scroll {
-    position: fixed;
     opacity: 0;
     width: 30px;
     height: 50px;
-    margin-left: -20px;
-    top: 95vh;
-  margin-top: -35px;
-  box-shadow: inset 0 0 0 1px #fff;
-  border-radius: 25px;
+    box-shadow: inset 0 0 0 1px #fff;
+    border-radius: 25px;
 }
 .icon-scroll:before {
   content: '';
@@ -427,4 +431,17 @@ padding-right: 50px;
         text-align: left;
         transform: rotate(-40deg);
     }     
+    .watchContent {
+        margin-top: 400px;
+        h2{
+            padding-bottom: 1vh;
+            font-size: 3.5vw;
+        }
+        h3{
+            padding-top: 10px;
+        }
+    }
+    .WatchMore{
+        margin-top: 10px;
+    }
 }
