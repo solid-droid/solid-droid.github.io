@@ -3,7 +3,6 @@
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  color: #e7e7e7;
 }
 
 body::-webkit-scrollbar {
@@ -36,6 +35,14 @@ section {
   position: relative;
   overflow: hidden;
   font-family: "Montserrat", sans-serif;
+}
+
+#panel1, #home {
+  color: #e7e7e7;
+}
+
+#panel2 {
+  font-size: 10px;
 }
 
 .Name {
@@ -129,10 +136,6 @@ section {
   color: #fff;
   outline: 0;
   background-position: 0;
-}
-
-.rocket {
-  height: 100px;
 }
 
 .scrollIconContainer {
@@ -449,12 +452,151 @@ section {
   top: 30px;
 }
 
+.PhoneAppBody .card {
+  height: 90px;
+  margin: 7px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 3px 1px #acacac;
+          box-shadow: 0px 0px 3px 1px #acacac;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 70% 30%;
+      grid-template-columns: 70% 30%;
+  padding: 10px;
+}
+
+.PhoneAppBody .Card2, .PhoneAppBody .Card4, .PhoneAppBody .Card1 {
+  background: -webkit-gradient(linear, left top, right top, from(#e9ffed), to(#71ff83eb));
+  background: linear-gradient(90deg, #e9ffed, #71ff83eb);
+}
+
+.PhoneAppBody .Card3 {
+  background: -webkit-gradient(linear, left top, right top, from(#fff0f0), to(#ffaeaf));
+  background: linear-gradient(90deg, #fff0f0, #ffaeaf);
+}
+
+.PhoneAppBody .SignalInfo {
+  margin-left: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.PhoneAppBody .SignalInfo .support {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 12px;
+}
+
+.PhoneAppBody .SignalInfo .signaltype {
+  text-align: center;
+  font-size: 25px;
+  font-weight: bold;
+  -webkit-transform: scale(0.9, 1);
+          transform: scale(0.9, 1);
+}
+
+.PhoneAppBody .SymbolInfo {
+  display: -ms-grid;
+  display: grid;
+  margin-top: 5px;
+  -ms-grid-rows: 35% 55%;
+      grid-template-rows: 35% 55%;
+  grid-gap: 10px;
+  border-right: 1px solid black;
+}
+
+.PhoneAppBody .SymbolInfo .SymbolName {
+  display: -ms-grid;
+  display: grid;
+  margin-top: -5px;
+  -ms-grid-columns: auto 100%;
+      grid-template-columns: auto 100%;
+  grid-gap: 5px;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+.PhoneAppBody .SymbolInfo .SymbolName .comp {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.PhoneAppBody .SymbolInfo .Indicators {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 30% 70%;
+      grid-template-columns: 30% 70%;
+}
+
+.PhoneAppBody .SymbolInfo .Indicators .Type, .PhoneAppBody .SymbolInfo .Indicators .values {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.PhoneAppBody .SymbolInfo .Indicators .RSI14 {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 5% 11% 15% 11% 15% 11% 15%;
+      grid-template-columns: 5% 11% 15% 11% 15% 11% 15%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-gap: 3px;
+}
+
+.PhoneAppBody .SymbolInfo .Indicators .RSI14 .RSIColor {
+  width: 10px;
+  height: 10px;
+  background: red;
+  border-radius: 4px;
+}
+
+.PhoneAppBody .SymbolInfo .Indicators .RSI14 .RSIValue {
+  margin-left: -3px;
+}
+
+.PhoneAppHeader {
+  margin: 15px;
+  margin-bottom: 0;
+  color: black;
+  font-size: 27px;
+  font-weight: bold;
+}
+
+.PhoneAppSearch {
+  padding: 5px;
+  color: #666666;
+  -webkit-box-shadow: 0px 0px 2px 1px #acacac;
+          box-shadow: 0px 0px 2px 1px #acacac;
+  border-radius: 20px;
+  margin: 10px;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
 .phoneBody {
   position: absolute;
-  top: 10;
-  right: 10;
-  width: 200px;
-  height: 370px;
+  top: 7vh;
+  right: 5vw;
+  width: 35vh;
+  height: 70vh;
   margin: 15px;
   border: 6px solid black;
   border-radius: 45px;
@@ -534,6 +676,10 @@ section {
   }
   .WatchMore {
     margin-top: 20px;
+  }
+  .phoneBody {
+    top: 1vh;
+    right: 8.5vw;
   }
 }
 /*# sourceMappingURL=main.css.map */
