@@ -160,7 +160,7 @@ function createTimeLines(screenID){
 }
 
 function Page1(){
-    gsap.to(".jobType",{opacity:1,  y:"-20vh"});
+    gsap.to(".jobType",{opacity:1,  y:"-15vh"});
     gsap.to(".icon-scroll",{opacity:1});
 }
 
@@ -180,7 +180,7 @@ function project1(id){
     let tl =gsap.timeline();
     tl.from(".watchStrap1",{y:-245 , duration:1},0);
     tl.from(".watchStrap2",{y:200 , duration:1}, 0);
-    tl.from(".watchFace",{opacity:0,x:-50, duration:0.5},0);
+    tl.from(".watchFace",{opacity:0,x:-20, duration:0.5},0);
     tl.from(".watchDisplay",{opacity:0, duration:1.5},"+=0.2");
     tl.from(".watchHeader",{opacity:0, y:-50, duration:1},0);
     tl.from(".watchContent",{opacity:0, y:-50, duration:1},0);

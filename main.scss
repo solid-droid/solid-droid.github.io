@@ -22,7 +22,7 @@ body{
 }
 
 h1{
-    font-size:  8vw;
+    font-size:  80px;
 }
 
 section {
@@ -48,6 +48,9 @@ section {
         height: 1vw;
         z-index: -1;
       }
+      h1{
+        font-size:  8vw;
+    }
     
 }
 .jobType{
@@ -68,7 +71,7 @@ section {
 position: absolute;
 text-align: right;
 width: 100%;
-top: 10%;
+top: calc(80vh - 390px);
 padding-right: 7vw;
 
 }
@@ -76,11 +79,11 @@ padding-right: 7vw;
 .watchContent{
     position: absolute;
     text-align: right;
-    bottom: 0;
+    top: calc(80vh - 260px);
     padding-right: 7vw;
     width: 100%;
     h2{
-         font-size:  2vw;
+         font-size:  30px;
         padding-bottom: 20px;
     }
 }
@@ -155,9 +158,9 @@ padding-right: 7vw;
 
 .watchBody{
     position: absolute;
-    top: 20;
-    left: 220px;
-    transform: rotate(50deg);
+    top: 0;
+    left: 290px;
+    transform: rotate(50deg) scale(1.4);
     .watchFace{
       position: absolute;
       width: 200px;
@@ -441,6 +444,12 @@ padding-right: 7vw;
 
 //mobile
 @media only screen and (max-width: 500px) {
+   
+    .Name{
+        h1{
+            font-size:  8vw;
+        }
+    }
     .jobType{
         top: 50vh;
         h1{
@@ -448,10 +457,19 @@ padding-right: 7vw;
         }
     }
     .watchHeader{
-        top: 50vh;
+        top: calc(80vh - 260px);
+        h1 {
+            font-size: 50px;
+        }
     }     
+    .watchBody{
+        top: 20;
+        left: 220px;
+        transform: rotate(50deg);
+    }
     .watchContent {
         margin-top: 0;
+        top: calc(80vh - 170px);
         h2{
             padding-bottom: 1vh;
             font-size: 3.5vw;
