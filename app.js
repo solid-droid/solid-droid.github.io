@@ -110,9 +110,9 @@ words.forEach((word,i) => {
   let tl = gsap.timeline({repeat:  i<words.length-1?1:0, yoyo: i<words.length-1?true:false, repeatDelay:0.7})
   tl.to('.text', {duration: 1, text: word})
   if(i==words.length-1){
-    tl.to(".Name", {duration:1, y:"-20vh", onComplete:loadComplete},"-=1")
-    tl.to(".jobType",{opacity:1,  y:"-15vh"});
-    tl.to(".icon-scroll",{opacity:1});
+    tl.to(".Name", {duration:1, y:"-20vh"},"-=1")
+    tl.to(".jobType",{duration:1,  opacity:1,  y:"-15vh"},"k");
+    tl.to(".icon-scroll",{duration:0.7,  opacity:1, onComplete:loadComplete});
   }
   
   masterTl.add(tl)
@@ -120,6 +120,7 @@ words.forEach((word,i) => {
 
 let autoScroll = false;
 async function loadComplete(){
+    $('.jobType').css({opacity:1});
     $('body').css({'overflow-y':'scroll'});
     await new Promise(r=>setTimeout(r, 1000));
     beginAutoScroll();
@@ -187,11 +188,17 @@ function project1(id){
 
 function project2(id){
     let tl =gsap.timeline();
-    tl.from(".phoneBody",{x:30 , y: 10, opacity:0, duration:0.5, delay:0.1},0);
-    tl.to(".watchContent",{opacity:0, y:-50, duration:1},0);
+    tl.from(".phoneBody",{x:30 , y: 10, opacity:0, duration:0.5, onComplete: phoneAnimation, delay:0.1},0);
+    tl.to(".watchContent",{opacity:0, y:-70, duration:1 },0);
+    tl.from(".panel2Header",{opacity:0, y:70, duration:1},0);
+    tl.from(".panel2Content",{opacity:0, y:70, duration:1},0);
     TimeLines[id].add(tl);
 }
 
+async function phoneAnimation(){
+    gsap.to(".Card1",{x:-165, duration:0.5});
+    gsap.to(".Card1",{x:0, duration:0.5, delay:2});
+}
 
 function project3(){
     

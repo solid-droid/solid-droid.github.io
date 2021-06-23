@@ -564,12 +564,47 @@ section {
 .PhoneAppBody .SymbolInfo .Indicators .RSI14 .RSIColor {
   width: 10px;
   height: 10px;
-  background: red;
   border-radius: 4px;
+}
+
+.PhoneAppBody .SymbolInfo .Indicators .RSI14 .red {
+  background: red;
+}
+
+.PhoneAppBody .SymbolInfo .Indicators .RSI14 .green {
+  background: green;
 }
 
 .PhoneAppBody .SymbolInfo .Indicators .RSI14 .RSIValue {
   margin-left: -3px;
+}
+
+.panel2Header {
+  position: absolute;
+  margin-left: 60px;
+  color: whitesmoke;
+}
+
+.panel2Content {
+  position: absolute;
+  margin-top: 150px;
+  margin-left: 60px;
+  color: whitesmoke;
+  width: 100%;
+}
+
+.panel2Content h2 {
+  font-size: 30px;
+  padding-bottom: 20px;
+}
+
+.panel2Content h3 {
+  font-size: 18px;
+}
+
+.panel2Content .btn {
+  margin-left: 0;
+  margin-right: 10px;
 }
 
 .PhoneAppHeader {
@@ -581,7 +616,7 @@ section {
 }
 
 .PhoneAppSearch {
-  padding: 5px;
+  padding: 7px;
   color: #666666;
   -webkit-box-shadow: 0px 0px 2px 1px #acacac;
           box-shadow: 0px 0px 2px 1px #acacac;
@@ -593,6 +628,7 @@ section {
 
 .phoneBody {
   position: absolute;
+  overflow: hidden;
   top: 7vh;
   right: 5vw;
   width: 35vh;
@@ -641,6 +677,22 @@ section {
   }
 }
 
+.panel2Cover {
+  position: absolute;
+  top: 15vh;
+  width: 100%;
+}
+
+@media only screen and (max-width: 770px) {
+  .panel2Cover {
+    height: 500px;
+    margin-top: 20%;
+    margin-left: -40px;
+    width: 10000px;
+    background: #0e0e0ea8;
+  }
+}
+
 @media only screen and (max-width: 500px) {
   .Name h1 {
     font-size: 8vw;
@@ -680,6 +732,22 @@ section {
   .phoneBody {
     top: 1vh;
     right: 8.5vw;
+  }
+  .panel2Cover {
+    margin-top: 28vh;
+  }
+  .panel2Header h1 {
+    font-size: 41px;
+  }
+  .panel2Content {
+    margin-top: 71px;
+  }
+  .panel2Content h2 {
+    padding-bottom: 1vh;
+    font-size: 3.5vw;
+  }
+  .panel2Content h3 {
+    padding-top: 10px;
   }
 }
 /*# sourceMappingURL=main.css.map */
