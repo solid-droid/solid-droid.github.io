@@ -691,6 +691,12 @@ section {
     width: 10000px;
     background: #0e0e0ea8;
   }
+  .panel2Cover .blur {
+    position: absolute;
+    background: #00000033;
+    height: 100vh;
+    width: 100vw;
+  }
 }
 
 @media only screen and (max-width: 500px) {

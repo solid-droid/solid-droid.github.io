@@ -587,6 +587,12 @@ padding-right: 7vw;
         margin-left: -40px;
         width: 10000px;
         background: #0e0e0ea8;
+        .blur{
+            position: absolute;
+            background: #00000033;
+            height: 100vh;
+            width: 100vw;
+        }
     }
 }
 //mobile
