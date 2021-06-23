@@ -37,6 +37,10 @@ section {
   font-family: "Montserrat", sans-serif;
 }
 
+#panel1 {
+  opacity: 0;
+}
+
 #panel1, #home {
   color: #e7e7e7;
 }

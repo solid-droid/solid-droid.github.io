@@ -138,7 +138,7 @@ words.forEach((word,i) => {
   let tl = gsap.timeline({repeat:  i<words.length-1?1:0, yoyo: i<words.length-1?true:false, repeatDelay:0.7})
   tl.to('.text', {duration: 1, text: word})
   if(i==words.length-1){
-    tl.to(".Name", {duration:1, y:"-20vh"},"-=1")
+    tl.to(".Name", {duration:1, y:"-20vh", onComplete:()=>$("#panel1").css({opacity:1})},"-=1")
     tl.to(".jobType",{duration:1,  opacity:1,  y:"-15vh"},"k");
     tl.to(".icon-scroll",{duration:0.7,  opacity:1, onComplete:loadComplete});
   }
@@ -151,13 +151,13 @@ async function loadComplete(){
     $('.jobType').css({opacity:1});
     $('body').css({'overflow-y':'scroll'});
     await new Promise(r=>setTimeout(r, 1000));
-    // beginAutoScroll();
-    // $(window).scroll(function() {
-    //     clearTimeout($.data(this, 'scrollTimer'));
-    //     $.data(this, 'scrollTimer', setTimeout(function() {
-    //         beginAutoScroll();
-    //     }, 3000));
-    // });
+    beginAutoScroll();
+    $(window).scroll(function() {
+        clearTimeout($.data(this, 'scrollTimer'));
+        $.data(this, 'scrollTimer', setTimeout(function() {
+            beginAutoScroll();
+        }, 3000));
+    });
 }
 function scale (number, inMin, inMax, outMin, outMax) {
     return (number - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
@@ -180,11 +180,11 @@ function createTimeLines(screenID){
             scrub:1.5,
             end: "bottom-=70%",
             onEnter:()=>{
-                console.log("In", screenID);
+            if(screenID==0)$(".Name").fadeOut();
             if(screenID==0)$(".jobType").fadeOut();
             },
             onEnterBack:()=>{
-                console.log("Back", screenID);
+            if(screenID==2)$(".Name").fadeIn(1000);
             if(screenID==2) $(".jobType").fadeIn(1000);
             },
         }});
@@ -218,7 +218,7 @@ function project1(id){
     tl.from(".watchHeader",{opacity:0, y:-50, duration:1},0);
     tl.from(".watchContent",{opacity:0, y:-50, duration:1},0);
     // tl.to(".jobType",{opacity:0, y:-70, duration:.5},0);
-    tl.to(".Name",{opacity:0, y:-70, duration:.5},0);
+    // tl.to(".Name",{opacity:0, y:-70, duration:.5},0);
     TimeLines[id].add(tl);
 }
 
