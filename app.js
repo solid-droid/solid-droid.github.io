@@ -189,9 +189,9 @@ function project1(id){
 function project2(id){
     let tl =gsap.timeline();
     tl.from(".phoneBody",{x:30 , y: 10, opacity:0, duration:0.5, onComplete: phoneAnimation, delay:0.1},0);
-    tl.to(".watchContent",{opacity:0, y:-70, duration:1 },0);
-    tl.from(".panel2Header",{opacity:0, y:70, duration:1},0);
-    tl.from(".panel2Content",{opacity:0, y:70, duration:1},0);
+    tl.to(".watchContent",{opacity:0, y:-30, duration:0.5 },0);
+    tl.from(".panel2Header",{opacity:0, y:70, duration:0.5},0);
+    tl.from(".panel2Content",{opacity:0, y:70, duration:0.5},0);
     TimeLines[id].add(tl);
 }
 
