@@ -42,6 +42,7 @@ section {
 }
 
 .Name {
+    position: absolute;
     height: 100%;
     display: flex;
     justify-content: left;
@@ -400,6 +401,16 @@ padding-right: 7vw;
     }
   }
   .PhoneAppBody{
+    .graph{
+        height: 80px;
+        position: absolute;
+        opacity: 0;
+        /* margin-top: -101px; */
+        margin-left: 80px;
+        z-index: 0;
+        overflow: hidden;
+        padding-top: 8px;
+    }
     .card{
         height:90px;
         margin:7px;
@@ -454,7 +465,7 @@ padding-right: 7vw;
         }
         .Indicators{
           display:grid;
-          grid-template-columns: 30% 70%;
+          grid-template-columns: 26% 70%;
           .Type, .values{
                 display:grid;
                 align-items:center;
@@ -657,5 +668,8 @@ padding-right: 7vw;
         h3{
             padding-top: 10px;
         }
+    }
+    .PhoneAppBody .graph {
+        margin-left: 105px;
     }
 }

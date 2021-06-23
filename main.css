@@ -46,6 +46,7 @@ section {
 }
 
 .Name {
+  position: absolute;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -452,6 +453,17 @@ section {
   top: 30px;
 }
 
+.PhoneAppBody .graph {
+  height: 80px;
+  position: absolute;
+  opacity: 0;
+  /* margin-top: -101px; */
+  margin-left: 80px;
+  z-index: 0;
+  overflow: hidden;
+  padding-top: 8px;
+}
+
 .PhoneAppBody .card {
   height: 90px;
   margin: 7px;
@@ -538,8 +550,8 @@ section {
 .PhoneAppBody .SymbolInfo .Indicators {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 30% 70%;
-      grid-template-columns: 30% 70%;
+  -ms-grid-columns: 26% 70%;
+      grid-template-columns: 26% 70%;
 }
 
 .PhoneAppBody .SymbolInfo .Indicators .Type, .PhoneAppBody .SymbolInfo .Indicators .values {
@@ -756,6 +768,9 @@ section {
   }
   .panel2Content h3 {
     padding-top: 10px;
+  }
+  .PhoneAppBody .graph {
+    margin-left: 105px;
   }
 }
 /*# sourceMappingURL=main.css.map */

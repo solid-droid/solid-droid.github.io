@@ -8,6 +8,34 @@
     // }
   }
 
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['', '', '', '', '', ''],
+        datasets: [{
+            data: [120, 137, 106, 112, 105, 108],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        plugins:{
+            legend: {
+                display: false
+            },
+            tooltip: {
+                enabled: false
+            }
+        },
+        scales: {
+            yAxes: [{
+                title: {
+                    display: false
+                }
+            }]
+        }
+   }
+});
 
   function updateClock(hours, minutes, seconds) {
 
@@ -123,13 +151,13 @@ async function loadComplete(){
     $('.jobType').css({opacity:1});
     $('body').css({'overflow-y':'scroll'});
     await new Promise(r=>setTimeout(r, 1000));
-    beginAutoScroll();
-    $(window).scroll(function() {
-        clearTimeout($.data(this, 'scrollTimer'));
-        $.data(this, 'scrollTimer', setTimeout(function() {
-            beginAutoScroll();
-        }, 3000));
-    });
+    // beginAutoScroll();
+    // $(window).scroll(function() {
+    //     clearTimeout($.data(this, 'scrollTimer'));
+    //     $.data(this, 'scrollTimer', setTimeout(function() {
+    //         beginAutoScroll();
+    //     }, 3000));
+    // });
 }
 function scale (number, inMin, inMax, outMin, outMax) {
     return (number - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
@@ -150,7 +178,15 @@ function createTimeLines(screenID){
             trigger:screens[screenID],
             start:"top-=50% top",
             scrub:1.5,
-            end: "bottom-=70%"
+            end: "bottom-=70%",
+            onEnter:()=>{
+                console.log("In", screenID);
+            if(screenID==0)$(".jobType").fadeOut();
+            },
+            onEnterBack:()=>{
+                console.log("Back", screenID);
+            if(screenID==2) $(".jobType").fadeIn(1000);
+            },
         }});
         ScrollTrigger.create({
             trigger: "#id",
@@ -181,14 +217,14 @@ function project1(id){
     tl.from(".watchDisplay",{opacity:0, duration:1.5},"+=0.2");
     tl.from(".watchHeader",{opacity:0, y:-50, duration:1},0);
     tl.from(".watchContent",{opacity:0, y:-50, duration:1},0);
-    tl.to(".jobType",{opacity:0, y:-70, duration:.5},0);
+    // tl.to(".jobType",{opacity:0, y:-70, duration:.5},0);
     tl.to(".Name",{opacity:0, y:-70, duration:.5},0);
     TimeLines[id].add(tl);
 }
 
 function project2(id){
     let tl =gsap.timeline();
-    tl.from(".phoneBody",{x:30 , y: 10, opacity:0, duration:0.5, onComplete: phoneAnimation, delay:0.1},0);
+    tl.from(".phoneBody",{x:30 , y: 10, opacity:0, duration:0.5, onStart: phoneAnimation, delay:0.1},0);
     tl.to(".watchContent",{opacity:0, y:-30, duration:0.5 },0);
     tl.from(".panel2Header",{opacity:0, y:70, duration:0.5},0);
     tl.from(".panel2Content",{opacity:0, y:70, duration:0.5},0);
@@ -196,7 +232,9 @@ function project2(id){
 }
 
 async function phoneAnimation(){
-    gsap.to(".Card1",{x:-170, duration:0.5});
+    await new Promise(r => setTimeout(r,2000));
+    $(".graph").css({opacity:1});
+    gsap.to(".Card1",{x:-167, duration:0.5});
     gsap.to(".Card1",{x:0, duration:0.5, delay:2});
 }
 
