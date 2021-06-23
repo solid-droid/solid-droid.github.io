@@ -196,7 +196,7 @@ function project2(id){
 }
 
 async function phoneAnimation(){
-    gsap.to(".Card1",{x:-165, duration:0.5});
+    gsap.to(".Card1",{x:-170, duration:0.5});
     gsap.to(".Card1",{x:0, duration:0.5, delay:2});
 }
 
