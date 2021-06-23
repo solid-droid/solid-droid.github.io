@@ -196,7 +196,7 @@ function project2(id){
 }
 
 async function phoneAnimation(){
-    await new Promise(r => setTimeout(r,500));
+    await new Promise(r => setTimeout(r,200));
     gsap.to(".Card1",{x:-165, duration:0.5});
     gsap.to(".Card1",{x:0, duration:0.5, delay:2});
 }
