@@ -104,21 +104,23 @@ const screens={
     0 : "#panel1",
     1 : "#panel2",
     2 : "#panel3",
-    3 : "#panel4",
-    4 : "#panel5",
-    5 : "#contact"
+    3 : "#contact"
 }
 
 const words = [" Nikhil", " a Designer", " a Developer", " Nikhil M Jeby"]
 
 
-
-
-let cursor = gsap.to('.cursor', {opacity:0, ease: "power2.inOut", repeat:-1})
+let TimeLines = [];
+let cursor
 let masterTl = gsap.timeline()
 let boxTl = gsap.timeline()
-let TimeLines = [];
-for(let i =0; i< 6;++i)
+
+init();
+async function init(){
+await new Promise(r => setTimeout(r, 500));
+$('#home').css({opacity:1});
+cursor = gsap.to('.cursor', {opacity:0, ease: "power2.inOut", repeat:-1})
+for(let i =0; i< 4;++i)
 {
     createTimeLines(i);
     BeginScreen(i);
@@ -145,19 +147,20 @@ words.forEach((word,i) => {
   
   masterTl.add(tl)
 })
+}
 
 let autoScroll = false;
 async function loadComplete(){
-    $('.jobType').css({opacity:1});
+    // $('.jobType').css({opacity:1});
     $('body').css({'overflow-y':'scroll'});
     await new Promise(r=>setTimeout(r, 1000));
-    beginAutoScroll();
-    $(window).scroll(function() {
-        clearTimeout($.data(this, 'scrollTimer'));
-        $.data(this, 'scrollTimer', setTimeout(function() {
-            beginAutoScroll();
-        }, 3000));
-    });
+    // beginAutoScroll();
+    // $(window).scroll(function() {
+    //     clearTimeout($.data(this, 'scrollTimer'));
+    //     $.data(this, 'scrollTimer', setTimeout(function() {
+    //         beginAutoScroll();
+    //     }, 3000));
+    // });
 }
 function scale (number, inMin, inMax, outMin, outMax) {
     return (number - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
@@ -183,9 +186,10 @@ function createTimeLines(screenID){
             if(screenID==0)$(".Name").fadeOut();
             if(screenID==0)$(".jobType").fadeOut();
             },
-            onEnterBack:()=>{
-            if(screenID==2)$(".Name").fadeIn(1000);
-            if(screenID==2) $(".jobType").fadeIn(1000);
+            onLeaveBack:async ()=>{
+            if(screenID==0)$(".Name").fadeIn(1000);
+            await new Promise(r=>setTimeout(r,100));
+            if(screenID==0) $(".jobType").fadeIn(1000);
             },
         }});
         ScrollTrigger.create({
@@ -202,9 +206,7 @@ function BeginScreen(id){
         case 0: project1(id); break;
         case 1: project2(id); break;
         case 2: project3(id); break;
-        case 3: project4(id); break;
-        case 4: project5(id); break;
-        case 5: contact(id); break;
+        case 3: contact(id); break;
 
     }
 }
@@ -234,7 +236,7 @@ function project2(id){
 async function phoneAnimation(){
     await new Promise(r => setTimeout(r,2000));
     $(".graph").css({opacity:1});
-    gsap.to(".Card1",{x:-167, duration:0.5});
+    gsap.to(".Card1",{x:"-=70%", duration:0.5});
     gsap.to(".Card1",{x:0, duration:0.5, delay:2});
 }
 
