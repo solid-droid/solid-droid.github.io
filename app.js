@@ -240,22 +240,24 @@ async function phoneAnimation(){
     gsap.to(".Card1",{x:0, duration:0.5, delay:2});
 }
 
-function project3(){
-    
+function project3(id){
+    let tl =gsap.timeline();
+    tl.from(".Tiles",{opacity:0, y:50, duration:1},0);
+    tl.to("#panel2",{opacity:0, duration:0.5 },0);
+
+    TimeLines[id].add(tl);
 }
 
 
-function project4(){
-    
+function contact(id){
+    let tl =gsap.timeline();
+    tl.from(".ContactHeader",{opacity:0, y:50, duration:1},0);
+    tl.to("#panel3",{opacity:0, duration:0.5 },0);
+
+    TimeLines[id].add(tl);
+
 }
 
 
-function project5(){
-    
-}
-
-function contact(){
-    
-}
 
 
