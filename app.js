@@ -85,6 +85,15 @@ const links = {
         "https://codepen.io/solid-droid/pen/oNZOJbg",
         "https://github.com/solid-droid/BubbleOS"
     ], 
+    phone: [
+        "https://codepen.io/solid-droid/pen/dyvEppo",
+        "https://github.com/solid-droid/StockSignalBot"
+    ], 
+    contact: [
+        "https://github.com/solid-droid",
+        "https://www.linkedin.com/in/nikhiljeby/",
+        "https://docs.google.com/document/d/1BV70RLXCR7RyL0HptYcCcH5QVe1Bp0S2Ttxs2dJV_AY/edit?usp=sharing"
+    ], 
 };
 
 
@@ -154,13 +163,13 @@ async function loadComplete(){
     // $('.jobType').css({opacity:1});
     $('body').css({'overflow-y':'scroll'});
     await new Promise(r=>setTimeout(r, 1000));
-    // beginAutoScroll();
-    // $(window).scroll(function() {
-    //     clearTimeout($.data(this, 'scrollTimer'));
-    //     $.data(this, 'scrollTimer', setTimeout(function() {
-    //         beginAutoScroll();
-    //     }, 3000));
-    // });
+    beginAutoScroll();
+    $(window).scroll(function() {
+        clearTimeout($.data(this, 'scrollTimer'));
+        $.data(this, 'scrollTimer', setTimeout(function() {
+            beginAutoScroll();
+        }, 3000));
+    });
 }
 function scale (number, inMin, inMax, outMin, outMax) {
     return (number - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
