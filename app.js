@@ -77,7 +77,7 @@ var myChart = new Chart(ctx, {
 
   $(document).ready(function(){
     $(this).scrollTop(0);
-    $('body').css({overflow:"hidden"});
+    // $('body').css({overflow:"hidden"});
 });
 
 const links = {
@@ -139,19 +139,19 @@ masterTl.pause()
 
 
 
-boxTl.to('.box', {duration:0.5, width:"25vw", delay: 0.1, ease: "power4.inOut"})
+boxTl.to('.box', {duration:0.5, width:"25vw", delay: 0.1, ease: "power4.inOut", onComplete:()=>{$("#panel1").css({opacity:1})}})
   .from('.hi', {duration:0.5, y:"11vw", ease: "power3.out"})
   .to('.box', {duration:1, height:"9.5vw", ease: "elastic.out", onComplete: () => masterTl.play() })
   .to('.box', {duration:2, autoAlpha:0.7, yoyo: true, repeat: -1, ease:"rough({ template: none.out, strength:  1, points: 20, taper: 'none', randomize: true, clamp: false})"})
 
+gsap.to(".icon-scroll",{duration:2,  opacity:1})
 
 words.forEach((word,i) => {
   let tl = gsap.timeline({repeat:  i<words.length-1?1:0, yoyo: i<words.length-1?true:false, repeatDelay:0.7})
   tl.to('.text', {duration: 1, text: word})
   if(i==words.length-1){
-    tl.to(".Name", {duration:1, y:"-20vh", onComplete:()=>$("#panel1").css({opacity:1})},"-=1")
-    tl.to(".jobType",{duration:1,  opacity:1,  y:"-15vh"},"k");
-    tl.to(".icon-scroll",{duration:0.7,  opacity:1, onComplete:loadComplete});
+    tl.to(".Name", {duration:1, y:"-20vh"},"-=1")
+    tl.to(".jobType",{duration:1,  opacity:1,  y:"-15vh",onComplete:loadComplete},"k");
   }
   
   masterTl.add(tl)
@@ -161,7 +161,7 @@ words.forEach((word,i) => {
 let autoScroll = false;
 async function loadComplete(){
     // $('.jobType').css({opacity:1});
-    $('body').css({'overflow-y':'scroll'});
+    // $('body').css({'overflow-y':'scroll'});
     await new Promise(r=>setTimeout(r, 1000));
     beginAutoScroll();
     $(window).scroll(function() {
