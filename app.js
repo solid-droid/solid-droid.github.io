@@ -163,13 +163,15 @@ async function loadComplete(){
     // $('.jobType').css({opacity:1});
     // $('body').css({'overflow-y':'scroll'});
     await new Promise(r=>setTimeout(r, 1000));
-    beginAutoScroll();
-    $(window).scroll(function() {
-        clearTimeout($.data(this, 'scrollTimer'));
-        $.data(this, 'scrollTimer', setTimeout(function() {
-            beginAutoScroll();
-        }, 3000));
-    });
+///////////////-----------------------------------------uncomment below for autoscroll--
+
+    // beginAutoScroll();
+    // $(window).scroll(function() {
+    //     clearTimeout($.data(this, 'scrollTimer'));
+    //     $.data(this, 'scrollTimer', setTimeout(function() {
+    //         beginAutoScroll();
+    //     }, 3000));
+    // });
 }
 function scale (number, inMin, inMax, outMin, outMax) {
     return (number - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
@@ -188,7 +190,7 @@ function createTimeLines(screenID){
     TimeLines[screenID] =  gsap.timeline({
         scrollTrigger :{
             trigger:screens[screenID],
-            start:"top-=50% top",
+            start:"top-=70% top",
             scrub:1.5,
             end: "bottom-=70%",
             onEnter:()=>{
@@ -205,7 +207,8 @@ function createTimeLines(screenID){
             trigger: "#id",
             trigger:screens[screenID],
             start:"top top",
-            pin:true,
+            //////------------------------------------------set to true to enable pinning
+            pin:false,
             end: "bottom-=50%"
         });
 }
@@ -224,7 +227,7 @@ function project1(id){
     let tl =gsap.timeline();
     tl.from(".watchStrap1",{y:-245 , duration:1},0);
     tl.from(".watchStrap2",{y:200 , duration:1}, 0);
-    tl.from(".watchFace",{opacity:0,x:-20, duration:0.5},0);
+    tl.from(".watchFace",{opacity:0,x:-10, duration:1},0);
     tl.from(".watchDisplay",{opacity:0, duration:1.5},"+=0.2");
     tl.from(".watchHeader",{opacity:0, y:-50, duration:1},0);
     tl.from(".watchContent",{opacity:0, y:-50, duration:1},0);
