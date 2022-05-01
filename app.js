@@ -92,7 +92,7 @@ const links = {
     contact: [
         "https://github.com/solid-droid",
         "https://www.linkedin.com/in/nikhiljeby/",
-        "https://docs.google.com/document/d/1BV70RLXCR7RyL0HptYcCcH5QVe1Bp0S2Ttxs2dJV_AY/edit?usp=sharing"
+        "https://docs.google.com/document/d/1JMZO7FE1v_o78hgWbmxpaAsDpPkVqg5W4CkYF_tokZc/edit?usp=sharing"
     ], 
 };
 
